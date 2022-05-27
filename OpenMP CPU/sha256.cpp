@@ -57,7 +57,7 @@ void SHA256::transform(const unsigned char *message, unsigned int block_nb)
             wv[1] = wv[0];
             wv[0] = t1 + t2;
         }
-        #pragma omp parallel for reduction(+:m_h)
+        #pragma omp parallel for
         for (j = 0; j < 8; j++) {
             m_h[j] += wv[j];
         }
