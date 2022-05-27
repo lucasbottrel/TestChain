@@ -27,12 +27,16 @@ void Block::MineBlock(uint32_t nDifficulty)
 
     string str(cstr);
 
-    #pragma omp parallel for
-    for (int i = 0; sHash.substr(0, nDifficulty) != str; i++)
-    {
-        _nNonce++;
-        sHash = _CalculateHash();
-    }
+    #pragma omp parallel
+	{
+		#pragma omp single nowait
+    	while (sHash.substr(0, nDifficulty) != str)
+    	{
+			#pragma omp task firstprivate(sHash)
+        	_nNonce++;
+        	sHash = _CalculateHash();
+    	}
+	}
 
     cout << "Block mined: " << sHash << endl;
 }
