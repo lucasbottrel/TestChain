@@ -29,10 +29,8 @@ void Block::MineBlock(uint32_t nDifficulty)
 
     #pragma omp parallel
 	{
-		#pragma omp single nowait
     	while (sHash.substr(0, nDifficulty) != str)
     	{
-			#pragma omp task firstprivate(sHash)
         	_nNonce++;
         	sHash = _CalculateHash();
     	}
@@ -44,7 +42,7 @@ void Block::MineBlock(uint32_t nDifficulty)
 inline string Block::_CalculateHash() const
 {
     stringstream ss;
-    #pragma critical 
+ 
     ss << _nIndex << sPrevHash << _tTime << _sData << _nNonce;
 
     return sha256(ss.str());

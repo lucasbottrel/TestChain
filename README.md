@@ -24,8 +24,8 @@ Mining block 3...
 Block mined: 00000d3094df263d03737ffee835784a04a1debe0dd0152478ade8ceee40d4d7
 
 ```terminal
-real    0m50.191s 
-user    0m50.174s 
+real    0m59.456s
+user    0m59.437s
 sys     0m0.004s
 ```
 
