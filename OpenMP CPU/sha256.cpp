@@ -28,6 +28,7 @@ void SHA256::transform(const unsigned char *message, unsigned int block_nb)
     const unsigned char *sub_block;
     int i;
     int j;
+    #pragma omp parallel for
     for (i = 0; i < (int) block_nb; i++) {
         sub_block = message + (i << 6);
         for (j = 0; j < 16; j++) {
@@ -109,6 +110,7 @@ void SHA256::final(unsigned char *digest)
     m_block[m_len] = 0x80;
     SHA2_UNPACK32(len_b, m_block + pm_len - 4);
     transform(m_block, block_nb);
+    #pragma omp parallel for
     for (i = 0 ; i < 8; i++) {
         SHA2_UNPACK32(m_h[i], &digest[i << 2]);
     }
