@@ -28,7 +28,7 @@ void Block::MineBlock(uint32_t nDifficulty)
     string str(cstr);
 
     #pragma omp parallel for
-    for (; sHash.substr(0, nDifficulty) != str;)
+    for (int i = 0; sHash.substr(0, nDifficulty) != str; i++)
     {
         _nNonce++;
         sHash = _CalculateHash();
