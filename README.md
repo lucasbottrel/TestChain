@@ -36,7 +36,19 @@ sys     0m0.004s
 
 ## OpenMP para GPU
 
+Mining block 1...  
+Block mined: 00000309ff401a0ac77b60a65953d0fd83c9775ff92e5e0244057610c27d843b
 
+Mining block 2...  
+Block mined: 00000b4f4337a3fa0d3d93b968192c02a5117ab92ac59f7b0696d294b687a854
 
+Mining block 3...  
+Block mined: 0000094dc7a302c77f4adc853171475d4673bfa4421c5d3c270090b50da9fac6
+
+```terminal
+real    0m27.340s
+user    0m27.323s
+sys     0m0.008s
+```
 
 ## CUDA para GPU
