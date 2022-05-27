@@ -27,13 +27,13 @@ void Block::MineBlock(uint32_t nDifficulty)
 
     string str(cstr);
 
-    #pragma omp parallel for
-	for (int i = 0;sHash.substr(0, nDifficulty) != str; i++)
+    do
     {
         _nNonce++;
         sHash = _CalculateHash();
     }
-	
+    while (sHash.substr(0, nDifficulty) != str);
+
 
     cout << "Block mined: " << sHash << endl;
 }
@@ -41,7 +41,7 @@ void Block::MineBlock(uint32_t nDifficulty)
 inline string Block::_CalculateHash() const
 {
     stringstream ss;
- 
+
     ss << _nIndex << sPrevHash << _tTime << _sData << _nNonce;
 
     return sha256(ss.str());
