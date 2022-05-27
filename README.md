@@ -52,3 +52,5 @@ sys     0m0.008s
 ```
 
 ## CUDA para GPU
+
+Por conta de erros de compilação no parcode não foi possível medir o tempo de execução
