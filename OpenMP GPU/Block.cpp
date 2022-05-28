@@ -18,7 +18,7 @@ void Block::MineBlock(uint32_t nDifficulty)
 {
     char cstr[nDifficulty + 1];
 
-    #pragma omp target map(to:cstr) map(from:cstr)
+    #pragma omp target map(tofrom:cstr[0:nDifficulty + 1])
     #pragma omp teams distribute parallel for 
     for (uint32_t i = 0; i < nDifficulty; ++i)
     {
