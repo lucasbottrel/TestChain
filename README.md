@@ -53,9 +53,9 @@ Mining block 3...
 Block mined: 00000763b8f852671829b0cd0f1747c778a18fd01f5f44a05183d4d9a2d720d5
 
 ```terminal
-real    0m30.694s
-user    0m30.682s
-sys     0m0.004s
+real    0m41.571s
+user    2m36.132s
+sys     0m9.967s
 ```
 
 ## OpenMP para GPU

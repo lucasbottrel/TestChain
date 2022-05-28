@@ -14,7 +14,7 @@ Block::Block(uint32_t nIndexIn, const string &sDataIn) : _nIndex(nIndexIn), _sDa
     sHash = _CalculateHash();
 }
 
-#pragma omp target map(tofrom:cstr)
+#pragma omp target map
 #pragma omp teams distribute parallel for
 void Block::MineBlock(uint32_t nDifficulty)
 {
