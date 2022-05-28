@@ -14,10 +14,12 @@ Block::Block(uint32_t nIndexIn, const string &sDataIn) : _nIndex(nIndexIn), _sDa
     sHash = _CalculateHash();
 }
 
-#pragma omp teams distribute parallel for
 void Block::MineBlock(uint32_t nDifficulty)
 {
     char cstr[nDifficulty + 1];
+
+    #pragma omp target map(tofrom:cstr)
+    #pragma omp teams distribute parallel for 
     for (uint32_t i = 0; i < nDifficulty; ++i)
     {
         cstr[i] = '0';
