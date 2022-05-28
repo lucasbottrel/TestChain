@@ -28,7 +28,6 @@ void Block::MineBlock(uint32_t nDifficulty)
 
     string str(cstr);
 
-    #pragma omp parallel
     do
     {
         _nNonce++;
