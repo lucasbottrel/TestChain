@@ -127,8 +127,6 @@ std::string sha256(std::string input)
     char buf[2*SHA256::DIGEST_SIZE+1];
     buf[2*SHA256::DIGEST_SIZE] = 0;
 
-    #pragma omp target map(tofrom: digest[0:SHA256::DIGEST_SIZE])
-    #pragma omp teams distribute parallel for simd
     for (int i = 0; i < SHA256::DIGEST_SIZE; i++)
         sprintf(buf+i*2, "%02x", digest[i]);
     return std::string(buf);
