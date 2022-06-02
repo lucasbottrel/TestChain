@@ -13,7 +13,7 @@ using namespace std;
 
 class Blockchain {
 public:
-    Blockchain();
+    Blockchain(uint32_t nDifficulty);
 
     void AddBlock(Block bNew);
 

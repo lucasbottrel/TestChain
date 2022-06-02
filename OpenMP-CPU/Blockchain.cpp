@@ -2,12 +2,12 @@
 // Created by Dave Nash on 20/10/2017.
 //
 
-#include "Blockchain.h"
+#include "../headers/Blockchain.h"
 
-Blockchain::Blockchain()
+Blockchain::Blockchain(uint32_t nDifficulty)
 {
     _vChain.emplace_back(Block(0, "Genesis Block"));
-    _nDifficulty = 5;
+    _nDifficulty = nDifficulty;
 }
 
 void Blockchain::AddBlock(Block bNew)

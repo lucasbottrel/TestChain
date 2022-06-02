@@ -30,7 +30,6 @@ sys     0m0.004s
 ```
 
 ## OpenMP para multicore CPU
-
 ### How to compile
 
 ```terminal
@@ -40,7 +39,6 @@ Para executar:
 
 $ time ./TestChain
 ```
-
 ### Results
 
 Mining block 1...  
@@ -60,6 +58,14 @@ sys     0m9.967s
 
 ## OpenMP para GPU
 
+```terminal
+$ gcc8 -fopenmp -O3 -lstdc++ -o TestChain -std=c++11 -x c++ main.cpp Block.cpp Blockchain.cpp sha256.cpp 
+
+Para executar:
+
+$ time ./TestChain
+```
+
 Mining block 1...  
 Block mined: 00000309ff401a0ac77b60a65953d0fd83c9775ff92e5e0244057610c27d843b
 
@@ -70,12 +76,21 @@ Mining block 3...
 Block mined: 0000094dc7a302c77f4adc853171475d4673bfa4421c5d3c270090b50da9fac6
 
 ```terminal
-real    0m27.340s
-user    0m27.323s
-sys     0m0.008s
+real    0m19.696s
+user    0m18.828s
+sys     0m0.771s
 ```
 
 ## CUDA para GPU
+
+### How to Compile
+```
+$ nvcc main.cu Block.cu Blockchain.cu sha256.cu -o TestChain
+
+Para executar:
+
+$ time ./TestChain
+```
 
 Mining block 1...  
 Block mined: 0000028991413da63767ab2ce4f16b02bc34e8b05fe7871d1a749fbfa8a06263
