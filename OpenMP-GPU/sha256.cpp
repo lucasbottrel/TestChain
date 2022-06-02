@@ -1,6 +1,6 @@
 #include <cstring>
 #include <fstream>
-#include "../headers/sha256.h"
+#include "sha256.h"
 
 const unsigned int SHA256::sha256_k[64] = //UL = uint32
         {0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5,
@@ -140,8 +140,6 @@ std::string sha256(std::string input)
     char buf[2*SHA256::DIGEST_SIZE+1];
     buf[2*SHA256::DIGEST_SIZE] = 0;
 
-    //#pragma omp target map(tofrom:buf[0:2*SHA256::DIGEST_SIZE+1],digest[0:SHA256::DIGEST_SIZE])
-    //#pragma omp teams distribute parallel for simd
     for (int i = 0; i < SHA256::DIGEST_SIZE; i++)
         sprintf(buf+i*2, "%02x", digest[i]);
 

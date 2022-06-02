@@ -1,7 +1,7 @@
 #include<algorithm>
-#include "../headers/Block.cuh"
-#include "../headers/Sha256.cuh"
-#include "../headers/Sha256Host.cuh"
+#include "Block.cuh"
+#include "Sha256.cuh"
+#include "Sha256Host.cuh"
 
 #define THREADS 1500
 #define BLOCKS 256

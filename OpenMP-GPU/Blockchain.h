@@ -1,7 +1,3 @@
-//
-// Created by Dave Nash on 20/10/2017.
-//
-
 #ifndef TESTCHAIN_BLOCKCHAIN_H
 #define TESTCHAIN_BLOCKCHAIN_H
 
@@ -24,4 +20,4 @@ private:
     Block _GetLastBlock() const;
 };
 
-#endif //TESTCHAIN_BLOCKCHAIN_H
+#endif 

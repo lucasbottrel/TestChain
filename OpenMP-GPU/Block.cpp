@@ -1,9 +1,5 @@
-//
-// Created by Dave Nash on 20/10/2017.
-//
-
-#include "../headers/Block.h"
-#include "../headers/sha256.h"
+#include "Block.h"
+#include "sha256.h"
 
 Block::Block(uint32_t nIndexIn, const string &sDataIn) : _nIndex(nIndexIn), _sData(sDataIn)
 {

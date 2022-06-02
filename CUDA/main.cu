@@ -1,6 +1,6 @@
 ﻿#include "cuda_runtime.h"
 #include "device_launch_parameters.h"
-#include "headers/Blockchain.cuh"
+#include "Blockchain.cuh"
 
 #include <stdio.h>
 
@@ -20,6 +20,5 @@ int main()
 	cout << "Mining block 3..." << endl;
 	bChain.AddBlock(new Block(3, "Block 3 Data"));
 
-	//bChain.PrintBlockchain();
 	return 0;
 }

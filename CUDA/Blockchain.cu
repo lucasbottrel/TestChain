@@ -1,4 +1,4 @@
-#include "../headers/Blockchain.cuh"
+#include "Blockchain.cuh"
 
 Blockchain::Blockchain(uint32_t nDifficulty)
 {

@@ -1,8 +1,4 @@
-//
-// Created by Dave Nash on 20/10/2017.
-//
-
-#include "../headers/Blockchain.h"
+#include "Blockchain.h"
 
 Blockchain::Blockchain(uint32_t nDifficulty)
 {

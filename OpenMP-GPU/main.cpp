@@ -1,6 +1,6 @@
 #include <stdbool.h>
 
-#include "headers/Blockchain.h"
+#include "Blockchain.h"
 
 bool is_string_empty(char* c) {
     return ((c != NULL) && (c[0] == '\0'));
